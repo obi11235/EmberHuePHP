@@ -130,7 +130,7 @@ class Hue_Light
 		$this->setColorMode(self::MODE_XY);
 	}
 	
-	public function colorMode($mode)
+	public function setColorMode($mode)
 	{
 		if(!in_array($mode, array(self::MODE_CT, self::MODE_HUE, self::MODE_XY)))
 			throw new Exception('Invalid Color Mode');

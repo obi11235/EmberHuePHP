@@ -1,8 +1,9 @@
 <?php
 
 	define('EXCEPTION_LOG_FILE', 'error_log');
+	$_SERVER['SERVER_NAME'] = 'home.emberframework.com';
 	require_once('/var/www/ember/system/include/common.inc.php');
-	#Debug::enable();	
+	Debug::enable();	
 	
 	$ip = Site::getSetting('hue_ip');
 	$hash = Site::getSetting('hue_token');
@@ -11,6 +12,9 @@
 	$base = new Hue_Base($ip, $hash);
 	
 	$light = $base->getLightObj(1);
+	
+	Debug::print_r($light);
+	exit;
 	
 	echo 'Dim'.PHP_EOL;	
 	$light->setBrightness(1);
